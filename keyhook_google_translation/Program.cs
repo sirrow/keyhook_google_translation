@@ -16,7 +16,8 @@ namespace keyhook_google_translation
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new Form1());
+            google_translation_opener gto = new google_translation_opener();
+            Application.Run();
 		}
 	}
 }
