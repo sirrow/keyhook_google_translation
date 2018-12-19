@@ -34,6 +34,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.enjaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.jaenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.replaceReturnToSpaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,31 +48,41 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.enjaToolStripMenuItem,
-            this.jaenToolStripMenuItem});
+            this.jaenToolStripMenuItem,
+            this.replaceReturnToSpaceToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(110, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(265, 127);
             // 
             // enjaToolStripMenuItem
             // 
             this.enjaToolStripMenuItem.Name = "enjaToolStripMenuItem";
-            this.enjaToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.enjaToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.enjaToolStripMenuItem.Text = "en->ja";
             this.enjaToolStripMenuItem.Click += new System.EventHandler(this.enjaToolStripMenuItem_Click);
             // 
             // jaenToolStripMenuItem
             // 
             this.jaenToolStripMenuItem.Name = "jaenToolStripMenuItem";
-            this.jaenToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.jaenToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
             this.jaenToolStripMenuItem.Text = "ja->en";
             this.jaenToolStripMenuItem.Click += new System.EventHandler(this.jaenToolStripMenuItem_Click);
             // 
+            // replaceReturnToSpaceToolStripMenuItem
+            // 
+            this.replaceReturnToSpaceToolStripMenuItem.Name = "replaceReturnToSpaceToolStripMenuItem";
+            this.replaceReturnToSpaceToolStripMenuItem.Size = new System.Drawing.Size(264, 30);
+            this.replaceReturnToSpaceToolStripMenuItem.Text = "replace return to space";
+            this.replaceReturnToSpaceToolStripMenuItem.Click += new System.EventHandler(this.replaceReturnToSpace);
+            // 
             // google_translation_opener
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(473, 393);
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "google_translation_opener";
             this.Text = "google_translation_opener";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -86,6 +97,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem enjaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jaenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem replaceReturnToSpaceToolStripMenuItem;
     }
 }
 

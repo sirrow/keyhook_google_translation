@@ -27,6 +27,7 @@ namespace keyhook_google_translation
 		private int cc_count;
         private String from_lang;
         private String to_lang;
+        private bool replaceReturn = false;
 
 		public google_translation_opener()
 		{
@@ -77,7 +78,11 @@ namespace keyhook_google_translation
 					if (dataobject.GetDataPresent(DataFormats.Text))
 					{
 						Console.WriteLine(dataobject.GetData(DataFormats.Text));
-                        String encodedStr = System.Web.HttpUtility.UrlEncode((String)dataobject.GetData(DataFormats.Text));
+                        String inputStr = (String)dataobject.GetData(DataFormats.Text);
+                        if (replaceReturn) {
+                            inputStr = inputStr.Replace("\r\n", " ");
+                        }
+                        String encodedStr = System.Web.HttpUtility.UrlEncode(inputStr);
                         System.Diagnostics.Process.Start("https://translate.google.co.jp/#" + from_lang + "/" + to_lang + "/" + encodedStr);
 					}
 				}
@@ -128,6 +133,21 @@ namespace keyhook_google_translation
         private void jaenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             jaen_setup();
+        }
+
+        private void replaceReturnToSpace(object sender, EventArgs e)
+        {
+            ToolStripMenuItem casted = (ToolStripMenuItem)sender;
+            if (casted.Checked == false)
+            {
+                casted.Checked = true;
+                replaceReturn = true;
+            }
+            else
+            {
+                casted.Checked = false;
+                replaceReturn = false;
+            }
         }
     }
 }
